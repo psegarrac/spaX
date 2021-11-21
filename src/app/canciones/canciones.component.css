@@ -1,0 +1,30 @@
+
+.flex,
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.col {
+  flex:1;
+  padding: 100px;
+}
+
+.box{
+
+  height: 150px;
+  width:1200px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.section {
+  padding: 30px;
+
+}
+
+
+
+

@@ -1,0 +1,14 @@
+
+ <body>
+  <div class="container-fluid" style="margin-top:100px">
+   <br>
+   <br>
+     <div class="text-center"><img id="photo-album" src="assets/cancion/{{cancion!.file}}" alt="photo_album" height="300px" width="300px" alt="" *ngIf="cancion!.file.length"></div>
+     <div id="album" class="text-center"> Título: {{cancion!.album}}</div>
+     <div id="record-company" class="text-center"> Autor: {{cancion!.recordCompany}}</div>
+     <div id="year" class="text-center">Año: {{cancion!.year}}</div>
+     <div id="genre" class="text-center">Genero: {{cancion!.genre}}</div>
+     <div class="box"></div>
+   </div>
+ </body>
+ 

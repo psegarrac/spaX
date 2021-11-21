@@ -1,0 +1,31 @@
+
+button, input{
+    border-radius: 30px;
+    border-width: 1px;
+    line-height:0.5;
+    font-size:20px;
+    padding-left:40px;
+    background-image:url(../assets/icons/search.png);
+    background-size:18px;
+    background-repeat: no-repeat;
+    background-position-x: 5%;
+    background-position-y: 4.5px;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background:#6d86bd;
+  padding: 1em;
+}
+
+.nav-item {
+  color:white;
+  padding: 0 1em;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,27 @@
+<body>
+
+  <nav>
+    <div class="nav-left"><br><br>
+       <input type="text" name="filtrado" value="" placeholder="Titulo canción"  >
+    </div>
+    <div class="nav-center">
+      <div class="col-md-3">
+      <span class="navbar-brand text-black ml-2 h50">SpaXmusic</span>
+      </div>
+    </div>
+    <div class="nav-right">
+
+      <a href="#" class="nav-item"></a>
+      <img class="logo" src="assets/icons/SpaXlogo.png" width="100" height="100" class="d-inline-block align-top" alt="">
+    </div>
+  </nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+
+    <app-lista-canciones (cancionSeleccionada)="selecc($event)"  ></app-lista-canciones>
+
+  <div class="col-6">
+    <app-canciones *ngIf="cancionSelecc" [cancion]="cancionSelecc"></app-canciones>
+  </div>

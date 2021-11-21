@@ -1,0 +1,23 @@
+#title{
+    font-size:20px;
+}
+.flex,
+.row {
+  display: flex;
+
+}
+.col {
+  flex:1;
+  padding: 30px;
+}
+
+.box{
+  background: #00b1b3;
+  height: 150px;
+  width: 150px;
+
+}
+.section {
+  padding: 10px;
+
+}
