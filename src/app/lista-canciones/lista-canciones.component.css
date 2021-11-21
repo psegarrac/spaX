@@ -1,0 +1,49 @@
+label{
+  margin-right: 5px;
+  margin-bottom: 20px;
+  background-color:rgb(77, 9, 9);
+}
+
+li{
+  list-style:none;
+  margin-bottom:20px;
+}
+
+#pic{
+  margin-right:20px;
+}
+
+.rounded{
+  border-radius: 80rem!important;
+}
+*/
+#title{
+  font-size:20px;
+}
+/*
+#artist{
+  font-size:16px;
+  color: '#586E5F';
+}
+*/
+
+.flex,
+.row {
+  display: flex;
+
+}
+.col {
+  flex:1;
+  padding: 10px;
+}
+
+.box{
+  background: #00b1b3;
+  height: 150px;
+  width:150px;
+
+}
+.section {
+  padding: 20px;
+
+}
