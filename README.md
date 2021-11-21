@@ -1,25 +1,24 @@
-# SpaMusic 
-Creado por : Spax
+# (ICC02_P10) Aplicación frontend dinámica con frameworks avanzados de única página
+# Producto 2. ¡Música maestro! Mostrar un reproductor de música
+## SpaxMusic : Creadores Grupo Spax 
 
-## Development server
+<p align="center"><img src="https://github.com/psegarrac/spaX-4.0/blob/main/src/assets/icons/SpaXlogo.png" width="100"></a></p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Descripción
 
-## Code scaffolding
+Reproductor que nos permita lanzar los diferentes eventos relacionados con la reproducción de una canción.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|
-## Build
+## Objetivo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Integrar mediante HTML5 y manejo de eventos de Angular el interfaz de un reproductor de música para una canción seleccionada.
+<p align="center"><img src="https://anthoncode.com/wp-content/uploads/2019/01/angular-logo-png.png" width="100"></a></p>
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Algunos recursos:
 
-## Running end-to-end tests
+Git:
+https://youtu.be/FZRLRVxlxUw
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Angular: 
+https://youtu.be/FZRLRVxlxUw   /  https://angular.io/guide/component-interaction

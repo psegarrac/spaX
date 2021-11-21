@@ -1,14 +1,65 @@
 
  <body>
-  <div class="container-fluid" style="margin-top:100px">
+
+
+  <div class="container-fluid" style="margin-bottom:150px">
+    <!--<h1 class="text-right">{{cancion!.title}}</h1>
+  
+   <h3 class="text-left">{{cancion!.artist}}</h3>-->
    <br>
-   <br>
-     <div class="text-center"><img id="photo-album" src="assets/cancion/{{cancion!.file}}" alt="photo_album" height="300px" width="300px" alt="" *ngIf="cancion!.file.length"></div>
-     <div id="album" class="text-center"> Título: {{cancion!.album}}</div>
-     <div id="record-company" class="text-center"> Autor: {{cancion!.recordCompany}}</div>
-     <div id="year" class="text-center">Año: {{cancion!.year}}</div>
-     <div id="genre" class="text-center">Genero: {{cancion!.genre}}</div>
-     <div class="box"></div>
+  <br>
+     <div class="text-center"><img id="photo-album" src="assets/cancion/{{cancion!.file}}" alt="photo_album" height="250px" width="250px" alt="" *ngIf="cancion!.file.length"></div>
+     <div class="box1">
+     <div id="album" class="text-center"> Título canción: {{cancion!.album}}</div>
+     <div id="record-company" class="text-center"> Disco: {{cancion!.recordCompany}}</div>
+     <div id="artist" class="text-center"> Autor: {{cancion!.artist}}</div>
+     <div id="genre" class="text-center"> Género: {{cancion!.genre}}</div>
+     <div id="year" class="text-center">Año de publicación: {{cancion!.year}}</div> 
+     <div id="description" class="text-center">{{cancion!.description}}</div>
+     </div>
+     <!--<p style="background:rgb(130, 216, 238);">Tu primera caja de colores</p>
+     <p style="background:violet; color:white; font-weight:bold;">Tu primera caja de colores con texto blanco</p> -->
    </div>
+     
+ -->
+ <!--
+ <div class="section">
+   <div class="container">
+     <div class="row">
+       <div class="col">
+         <div class="box">
+           <img id="photo-album" src="assets/cancion/{{cancion!.file}}" alt="photo_album" height="180px" width="180px" alt="" *ngIf="cancion!.file.length">
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ listado ana
+ <mat-list>
+   <tr class="list-item headerlist">
+     <th>Track</th>
+     <th>Thumbnail</th>
+     <th>Artista</th>
+     <th>Title</th>
+     <th>Time</th>
+   </tr>
+ </mat-list>
+ -->
+ 
+ 
+ 
+             <!--<div>
+               <span><div id="album" > Album: {{cancion!.album}}</div></span>
+               <span><div  id="record-company" > Record Company: {{cancion!.recordCompany}}</div></span>
+               <span><div  id="genre" > Genre: {{cancion!.genre}}</div></span>
+               <span><div  id="year" >Year: {{cancion!.year}}</div></span>
+ 
+             </div>-->
+ 
+ 
+ 
+ 
+ 
+ 
  </body>
  

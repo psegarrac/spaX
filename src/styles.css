@@ -1,6 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+
 head, body{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Helvética', sans-serif;
+  background-color: hsl(120, 10%, 80%)!important;
 }
 
 .text-white{
