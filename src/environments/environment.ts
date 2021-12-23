@@ -1,7 +1,5 @@
 
 export const environment = {
-  
-
   production: false,
   firebase: {
     projectId: 'spax-90789',
