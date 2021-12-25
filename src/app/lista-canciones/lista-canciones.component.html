@@ -9,11 +9,13 @@
 <div class="section">
   <div class="container">
     <div class="row">
-      <div *ngFor="let cancion of canciones | filter: textoBusqueda: filtroArtista: filtroGenre: filtroNo" (click)="selecc(cancion)">
+      <div *ngFor="let cancion of canciones | async | filter: textoBusqueda: filtroArtista: filtroGenre: filtroNo" (click)="selecc(cancion)">
       <div class="col">
         <div class="box">
 
-          <div><img src="../../assets/cancion/{{cancion.file}}" id="pic" class="foto" alt="" width="150px" height="150px"></div>
+          <!--<div><img src="../../assets/cancion/{{cancion.file}}" id="pic" class="foto" alt="" width="150px" height="150px"></div>-->
+          <div><img src="{{cancion.file}}" id="pic" class="foto" alt="" width="150px" height="150px"></div>
+          
           <div  id="title" role="button">{{cancion.title}}</div>
          <!-- <div  id="artist" role="button">{{cancion.artist}}</div>-->
 

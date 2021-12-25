@@ -1,21 +1,30 @@
 import { Component } from '@angular/core';
 import { Cancion } from './cancion/cancion';
-import { CANCIONES } from './cancion/canciones';
+//import { CANCIONES } from './cancion/canciones';
 import { Artist } from './filtros-canciones/artist';
 import { Filtro } from './filtros-canciones/filtro';
 import { Genre } from './filtros-canciones/genre';
-
-
+import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 
 })
+
+
 export class AppComponent {
+
+  canciones: Observable<any[]>;
+  constructor(firestore: AngularFirestore) {
+    this.canciones = firestore.collection('canciones').valueChanges();
+  }
   title: string = "SpaX";
   textoFiltrado: string = "";
-  canciones = CANCIONES; 
+  //canciones = CANCIONES; 
+
+
   cancionSelecc: Cancion | null = null;
   filtroSelecc: Filtro | null = null;
   artistSelecc: Artist | null = null;

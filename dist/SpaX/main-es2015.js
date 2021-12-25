@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/pedro/Documentos/Developer/spaX/src/main.ts */"zUnb");
+module.exports = __webpack_require__(/*! /Users/pedrosegarra/Documents/Developer/spaX/src/main.ts */"zUnb");
 
 
 /***/ }),
@@ -139,7 +139,7 @@ DetalleFiltroComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListaCancionesComponent", function() { return ListaCancionesComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _cancion_canciones__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../cancion/canciones */ "MuGa");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/firestore */ "I/3d");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pipes/filter.pipe */ "BhhM");
 
@@ -159,52 +159,49 @@ function ListaCancionesComponent_div_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const cancion_r1 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("src", "../../assets/cancion/", cancion_r1.file, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", cancion_r1.file, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](cancion_r1.title);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](cancion_r1.artist);
 } }
 const _c0 = function (a0, a1, a2, a3, a4) { return [a0, a1, a2, a3, a4]; };
 class ListaCancionesComponent {
-    constructor() {
-        this.canciones = _cancion_canciones__WEBPACK_IMPORTED_MODULE_1__["CANCIONES"];
+    constructor(firestore) {
         this.textoBusqueda = "";
         this.filtroArtista = null;
         this.filtroGenre = null;
         this.filtroNo = null;
         this.cancionSeleccionada = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.canciones = firestore.collection('canciones').valueChanges();
     }
+    //constructor() { }
     ngOnInit() {
     }
     selecc(seleccionada) {
         this.cancionSeleccionada.emit(seleccionada);
     }
 }
-ListaCancionesComponent.ɵfac = function ListaCancionesComponent_Factory(t) { return new (t || ListaCancionesComponent)(); };
-ListaCancionesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ListaCancionesComponent, selectors: [["app-lista-canciones"]], inputs: { textoBusqueda: "textoBusqueda", filtroArtista: "filtroArtista", filtroGenre: "filtroGenre", filtroNo: "filtroNo" }, outputs: { cancionSeleccionada: "cancionSeleccionada" }, decls: 5, vars: 13, consts: [[1, "section"], [1, "container"], [1, "row"], [3, "click", 4, "ngFor", "ngForOf"], [3, "click"], [1, "col"], [1, "box"], ["id", "pic", "alt", "", "width", "150px", "height", "150px", 1, "foto", 3, "src"], ["id", "title", "role", "button"], ["id", "artist", "role", "button"]], template: function ListaCancionesComponent_Template(rf, ctx) { if (rf & 1) {
+ListaCancionesComponent.ɵfac = function ListaCancionesComponent_Factory(t) { return new (t || ListaCancionesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"])); };
+ListaCancionesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ListaCancionesComponent, selectors: [["app-lista-canciones"]], inputs: { textoBusqueda: "textoBusqueda", filtroArtista: "filtroArtista", filtroGenre: "filtroGenre", filtroNo: "filtroNo" }, outputs: { cancionSeleccionada: "cancionSeleccionada" }, decls: 6, vars: 15, consts: [[1, "section"], [1, "container"], [1, "row"], [3, "click", 4, "ngFor", "ngForOf"], [3, "click"], [1, "col"], [1, "box"], ["id", "pic", "alt", "", "width", "150px", "height", "150px", 1, "foto", 3, "src"], ["id", "title", "role", "button"]], template: function ListaCancionesComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ListaCancionesComponent_div_3_Template, 10, 3, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ListaCancionesComponent_div_3_Template, 8, 2, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](4, "filter");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](5, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBindV"](4, 1, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction5"](7, _c0, ctx.canciones, ctx.textoBusqueda, ctx.filtroArtista, ctx.filtroGenre, ctx.filtroNo)));
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"]], pipes: [_pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_3__["FilterPipe"]], styles: ["label[_ngcontent-%COMP%]{\n  margin-right: 5px;\n  margin-bottom: 20px;\n  background-color:rgb(77, 9, 9);\n}\n\nli[_ngcontent-%COMP%]{\n  list-style:none;\n  margin-bottom:20px;\n}\n\n#pic[_ngcontent-%COMP%]{\n  margin-right:20px;\n}\n\n.rounded[_ngcontent-%COMP%]{\n  border-radius: 80rem!important;\n}\n\n*/\n#title[_ngcontent-%COMP%]{\n  font-size:20px;\n}\n\n\n\n.flex[_ngcontent-%COMP%], .row[_ngcontent-%COMP%] {\n  display: flex;\n\n}\n\n.col[_ngcontent-%COMP%] {\n  flex:1;\n  padding: 10px;\n}\n\n.box[_ngcontent-%COMP%]{\n  background: #00b1b3;\n  height: 150px;\n  width:150px;\n\n}\n\n.section[_ngcontent-%COMP%] {\n  padding: 20px;\n\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxpc3RhLWNhbmNpb25lcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsaUJBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQiw4QkFBOEI7QUFDaEM7O0FBRUE7RUFDRSxlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0UsOEJBQThCO0FBQ2hDOztBQUNBOztFQUVFLGNBQWM7QUFDaEI7O0FBQ0E7Ozs7O0NBS0M7O0FBRUQ7O0VBRUUsYUFBYTs7QUFFZjs7QUFDQTtFQUNFLE1BQU07RUFDTixhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsYUFBYTtFQUNiLFdBQVc7O0FBRWI7O0FBQ0E7RUFDRSxhQUFhOztBQUVmIiwiZmlsZSI6Imxpc3RhLWNhbmNpb25lcy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsibGFiZWx7XG4gIG1hcmdpbi1yaWdodDogNXB4O1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOnJnYig3NywgOSwgOSk7XG59XG5cbmxpe1xuICBsaXN0LXN0eWxlOm5vbmU7XG4gIG1hcmdpbi1ib3R0b206MjBweDtcbn1cblxuI3BpY3tcbiAgbWFyZ2luLXJpZ2h0OjIwcHg7XG59XG5cbi5yb3VuZGVke1xuICBib3JkZXItcmFkaXVzOiA4MHJlbSFpbXBvcnRhbnQ7XG59XG4qL1xuI3RpdGxle1xuICBmb250LXNpemU6MjBweDtcbn1cbi8qXG4jYXJ0aXN0e1xuICBmb250LXNpemU6MTZweDtcbiAgY29sb3I6ICcjNTg2RTVGJztcbn1cbiovXG5cbi5mbGV4LFxuLnJvdyB7XG4gIGRpc3BsYXk6IGZsZXg7XG5cbn1cbi5jb2wge1xuICBmbGV4OjE7XG4gIHBhZGRpbmc6IDEwcHg7XG59XG5cbi5ib3h7XG4gIGJhY2tncm91bmQ6ICMwMGIxYjM7XG4gIGhlaWdodDogMTUwcHg7XG4gIHdpZHRoOjE1MHB4O1xuXG59XG4uc2VjdGlvbiB7XG4gIHBhZGRpbmc6IDIwcHg7XG5cbn1cbiJdfQ== */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBindV"](4, 1, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction5"](9, _c0, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](5, 7, ctx.canciones), ctx.textoBusqueda, ctx.filtroArtista, ctx.filtroGenre, ctx.filtroNo)));
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"]], pipes: [_pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_3__["FilterPipe"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["AsyncPipe"]], styles: ["label[_ngcontent-%COMP%]{\n  margin-right: 5px;\n  margin-bottom: 20px;\n  background-color:rgb(77, 9, 9);\n}\n\nli[_ngcontent-%COMP%]{\n  list-style:none;\n  margin-bottom:20px;\n}\n\n#pic[_ngcontent-%COMP%]{\n  margin-right:20px;\n}\n\n.rounded[_ngcontent-%COMP%]{\n  border-radius: 80rem!important;\n}\n\n*/\n#title[_ngcontent-%COMP%]{\n  font-size:20px;\n}\n\n\n\n.flex[_ngcontent-%COMP%], .row[_ngcontent-%COMP%] {\n  display: flex;\n\n}\n\n.col[_ngcontent-%COMP%] {\n  flex:1;\n  padding: 10px;\n}\n\n.box[_ngcontent-%COMP%]{\n  background: #00b1b3;\n  height: 150px;\n  width:150px;\n\n}\n\n.section[_ngcontent-%COMP%] {\n  padding: 20px;\n\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxpc3RhLWNhbmNpb25lcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsaUJBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQiw4QkFBOEI7QUFDaEM7O0FBRUE7RUFDRSxlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0UsOEJBQThCO0FBQ2hDOztBQUNBOztFQUVFLGNBQWM7QUFDaEI7O0FBQ0E7Ozs7O0NBS0M7O0FBRUQ7O0VBRUUsYUFBYTs7QUFFZjs7QUFDQTtFQUNFLE1BQU07RUFDTixhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsYUFBYTtFQUNiLFdBQVc7O0FBRWI7O0FBQ0E7RUFDRSxhQUFhOztBQUVmIiwiZmlsZSI6Imxpc3RhLWNhbmNpb25lcy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsibGFiZWx7XG4gIG1hcmdpbi1yaWdodDogNXB4O1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOnJnYig3NywgOSwgOSk7XG59XG5cbmxpe1xuICBsaXN0LXN0eWxlOm5vbmU7XG4gIG1hcmdpbi1ib3R0b206MjBweDtcbn1cblxuI3BpY3tcbiAgbWFyZ2luLXJpZ2h0OjIwcHg7XG59XG5cbi5yb3VuZGVke1xuICBib3JkZXItcmFkaXVzOiA4MHJlbSFpbXBvcnRhbnQ7XG59XG4qL1xuI3RpdGxle1xuICBmb250LXNpemU6MjBweDtcbn1cbi8qXG4jYXJ0aXN0e1xuICBmb250LXNpemU6MTZweDtcbiAgY29sb3I6ICcjNTg2RTVGJztcbn1cbiovXG5cbi5mbGV4LFxuLnJvdyB7XG4gIGRpc3BsYXk6IGZsZXg7XG5cbn1cbi5jb2wge1xuICBmbGV4OjE7XG4gIHBhZGRpbmc6IDEwcHg7XG59XG5cbi5ib3h7XG4gIGJhY2tncm91bmQ6ICMwMGIxYjM7XG4gIGhlaWdodDogMTUwcHg7XG4gIHdpZHRoOjE1MHB4O1xuXG59XG4uc2VjdGlvbiB7XG4gIHBhZGRpbmc6IDIwcHg7XG5cbn1cbiJdfQ== */"] });
 
 
 /***/ }),
@@ -232,7 +229,7 @@ function ReproductorComponent_img_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "img", 17);
 } if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate1"]("src", "../../assets/", ctx_r0.cancion.file, "", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("src", ctx_r0.cancion.file, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"]);
 } }
 function ReproductorComponent_img_12_Template(rf, ctx) { if (rf & 1) {
     const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
@@ -474,100 +471,6 @@ FilterPipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]
 
 /***/ }),
 
-/***/ "MuGa":
-/*!**************************************!*\
-  !*** ./src/app/cancion/canciones.ts ***!
-  \**************************************/
-/*! exports provided: CANCIONES */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CANCIONES", function() { return CANCIONES; });
-const CANCIONES = [
-    {
-        id: 1,
-        title: 'Nocturne',
-        artist: 'Frédéric Chopin',
-        year: 1832,
-        album: 'The Nocturnes',
-        duration: '04:30',
-        recordCompany: 'Point Classics',
-        genre: 'Clasico',
-        file: '../../assets/cancion/nocturne.png',
-        description: 'The Nocturnes, Op. 9 are a set of three nocturnes for solo piano written by Frédéric Chopin between 1831 and 1832, published in 1832, and dedicated to Madame Marie Pleyel.',
-        mp3: '../../assets/cancionmp3/Nocturne.mp3',
-    },
-    {
-        id: 2,
-        title: 'Lacrimosa',
-        artist: 'Amadeus Mozart',
-        year: 1791,
-        album: 'The Requiem in D minor',
-        duration: '03:20',
-        recordCompany: 'Wolfgang Amadeus Mozart',
-        genre: 'Clasico',
-        file: '../../assets/cancion/Lacrimosa.png',
-        description: 'The Requiem in D minor, K. 626, is a requiem mass by Wolfgang Amadeus Mozart. Mozart composed part of the Requiem in Vienna in late 1791, but it was unfinished at his death on 5 December the same year.',
-        mp3: '../../assets/cancionmp3/Lacrimosa.mp3',
-    },
-    {
-        id: 3,
-        title: 'Take Me Away',
-        artist: 'Audio Library',
-        year: 2018,
-        album: "Tobjan",
-        duration: '03:08',
-        recordCompany: 'Music for content creators',
-        genre: 'Pop',
-        file: '../../assets/cancion/TakeMeAway.png',
-        description: 'Audio Library is a channel dedicated to search, catalog, sort and publish No Copyright Music, Vlog Music and Royalty Free Music for content creators',
-        mp3: '../../assets/cancionmp3/TakeMeAway.mp3',
-    },
-    {
-        id: 4,
-        title: 'Limujii',
-        artist: 'Audio Library',
-        year: 2021,
-        album: "Cloud",
-        duration: '02:33',
-        recordCompany: 'Music for content creators',
-        genre: 'Chill',
-        file: '../../assets/cancion/Limujii.png',
-        description: 'Chill-out (shortened as chill; also typeset as chillout or chill out) is a loosely defined form of popular music characterized by slow tempos and relaxed moods.',
-        mp3: '../../assets/cancionmp3/Limujii.mp3',
-    },
-    {
-        id: 5,
-        title: 'Wake Up',
-        artist: 'Audio Library',
-        year: 2020,
-        album: "Scandinavianz",
-        duration: '01:46',
-        recordCompany: 'Music for content creators',
-        genre: 'Pop',
-        file: '../../assets/cancion/WakeUp.png',
-        description: 'Pop is a genre of popular music that originated in its modern form during the mid-1950s in the United States and the United Kingdom.',
-        mp3: '../../assets/cancionmp3/WakeUp.mp3',
-    },
-    {
-        id: 6,
-        title: 'Love is a Losing Game',
-        artist: 'Free Vibes',
-        year: 2015,
-        album: "Back to Black",
-        duration: '02:30',
-        recordCompany: 'Free Vibes',
-        genre: 'Rock',
-        file: '../../assets/cancion/Rock.png',
-        description: 'Rock music is a broad genre of popular music that originated as "rock and roll" in the United States in the late 1940s and early 1950s',
-        mp3: '../../assets/cancionmp3/Rock.mp3',
-    },
-];
-
-
-/***/ }),
-
 /***/ "Sy1n":
 /*!**********************************!*\
   !*** ./src/app/app.component.ts ***!
@@ -578,8 +481,8 @@ const CANCIONES = [
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
-/* harmony import */ var _cancion_canciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cancion/canciones */ "MuGa");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/firestore */ "I/3d");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _filtros_filtros_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./filtros/filtros.component */ "lot9");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
@@ -597,36 +500,37 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function AppComponent_app_detalle_filtro_20_Template(rf, ctx) { if (rf & 1) {
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "app-detalle-filtro", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("artistSeleccionado", function AppComponent_app_detalle_filtro_20_Template_app_detalle_filtro_artistSeleccionado_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r4); const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r3.seleccionArtist($event); })("genreSeleccionado", function AppComponent_app_detalle_filtro_20_Template_app_detalle_filtro_genreSeleccionado_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r4); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r5.seleccionGenre($event); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "app-detalle-filtro", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("artistSeleccionado", function AppComponent_app_detalle_filtro_20_Template_app_detalle_filtro_artistSeleccionado_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r3.seleccionArtist($event); })("genreSeleccionado", function AppComponent_app_detalle_filtro_20_Template_app_detalle_filtro_genreSeleccionado_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r5.seleccionGenre($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("filtro", ctx_r0.filtroSelecc);
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("filtro", ctx_r0.filtroSelecc);
 } }
 function AppComponent_app_canciones_23_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "app-canciones", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-canciones", 19);
 } if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("cancion", ctx_r1.cancionSelecc);
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("cancion", ctx_r1.cancionSelecc);
 } }
 function AppComponent_app_reproductor_25_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "app-reproductor", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-reproductor", 19);
 } if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("cancion", ctx_r2.cancionSelecc);
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("cancion", ctx_r2.cancionSelecc);
 } }
 class AppComponent {
-    constructor() {
+    constructor(firestore) {
         this.title = "SpaX";
         this.textoFiltrado = "";
-        this.canciones = _cancion_canciones__WEBPACK_IMPORTED_MODULE_0__["CANCIONES"];
+        //canciones = CANCIONES; 
         this.cancionSelecc = null;
         this.filtroSelecc = null;
         this.artistSelecc = null;
         this.genreSelecc = null;
         this.noSelecc = null;
+        this.canciones = firestore.collection('canciones').valueChanges();
     }
     selecc(seleccionada) {
         this.cancionSelecc = seleccionada;
@@ -643,65 +547,65 @@ class AppComponent {
         this.genreSelecc = seleccion;
     }
 }
-AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
-AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 26, vars: 8, consts: [[1, "nav-left"], ["type", "text", "name", "filtrado", "value", "", "placeholder", "Titulo canci\u00F3n", 3, "ngModel", "ngModelChange"], [1, "nav-center"], [1, "col-md-3"], [1, "navbar-brand", "text-black", "ml-2", "h50"], [1, "nav-right"], ["href", "#", 1, "nav-item"], ["src", "assets/icons/SpaXlogo.png", "width", "100", "height", "100", "alt", "", 1, "d-inline-block", "align-top"], [1, "container-fluid"], [1, "row"], [1, "col"], [1, "text-left", 2, "margin-left", "40px"], [3, "filtroSeleccionado"], [3, "filtro", "artistSeleccionado", "genreSeleccionado", 4, "ngIf"], [3, "textoBusqueda", "filtroArtista", "filtroGenre", "filtroNo", "cancionSeleccionada"], [1, "col-6"], [3, "cancion", 4, "ngIf"], [1, "footer", "fixed-bottom"], [3, "filtro", "artistSeleccionado", "genreSeleccionado"], [3, "cancion"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "body");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "nav");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "br");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "br");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "input", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngModelChange", function AppComponent_Template_input_ngModelChange_5_listener($event) { return ctx.textoFiltrado = $event; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "span", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "SpaXmusic");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](11, "a", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](12, "img", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "div", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "div", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "div", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "h3", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, "Filtrar");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "app-filtros", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("filtroSeleccionado", function AppComponent_Template_app_filtros_filtroSeleccionado_18_listener($event) { return ctx.seleccionFiltro($event); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "div", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](20, AppComponent_app_detalle_filtro_20_Template, 1, 1, "app-detalle-filtro", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "app-lista-canciones", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("cancionSeleccionada", function AppComponent_Template_app_lista_canciones_cancionSeleccionada_21_listener($event) { return ctx.selecc($event); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](23, AppComponent_app_canciones_23_Template, 1, 1, "app-canciones", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "footer", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](25, AppComponent_app_reproductor_25_Template, 1, 1, "app-reproductor", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"])); };
+AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 26, vars: 8, consts: [[1, "nav-left"], ["type", "text", "name", "filtrado", "value", "", "placeholder", "Titulo canci\u00F3n", 3, "ngModel", "ngModelChange"], [1, "nav-center"], [1, "col-md-3"], [1, "navbar-brand", "text-black", "ml-2", "h50"], [1, "nav-right"], ["href", "#", 1, "nav-item"], ["src", "assets/icons/SpaXlogo.png", "width", "100", "height", "100", "alt", "", 1, "d-inline-block", "align-top"], [1, "container-fluid"], [1, "row"], [1, "col"], [1, "text-left", 2, "margin-left", "40px"], [3, "filtroSeleccionado"], [3, "filtro", "artistSeleccionado", "genreSeleccionado", 4, "ngIf"], [3, "textoBusqueda", "filtroArtista", "filtroGenre", "filtroNo", "cancionSeleccionada"], [1, "col-6"], [3, "cancion", 4, "ngIf"], [1, "footer", "fixed-bottom"], [3, "filtro", "artistSeleccionado", "genreSeleccionado"], [3, "cancion"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "body");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "nav");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "input", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function AppComponent_Template_input_ngModelChange_5_listener($event) { return ctx.textoFiltrado = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "span", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "SpaXmusic");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "a", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "img", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "h3", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Filtrar");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "app-filtros", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("filtroSeleccionado", function AppComponent_Template_app_filtros_filtroSeleccionado_18_listener($event) { return ctx.seleccionFiltro($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](20, AppComponent_app_detalle_filtro_20_Template, 1, 1, "app-detalle-filtro", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "app-lista-canciones", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("cancionSeleccionada", function AppComponent_Template_app_lista_canciones_cancionSeleccionada_21_listener($event) { return ctx.selecc($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](23, AppComponent_app_canciones_23_Template, 1, 1, "app-canciones", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "footer", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](25, AppComponent_app_reproductor_25_Template, 1, 1, "app-reproductor", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx.textoFiltrado);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.filtroSelecc);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("textoBusqueda", ctx.textoFiltrado)("filtroArtista", ctx.artistSelecc)("filtroGenre", ctx.genreSelecc)("filtroNo", ctx.filtroSelecc);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.cancionSelecc);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.cancionSelecc);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.textoFiltrado);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.filtroSelecc);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("textoBusqueda", ctx.textoFiltrado)("filtroArtista", ctx.artistSelecc)("filtroGenre", ctx.genreSelecc)("filtroNo", ctx.filtroSelecc);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.cancionSelecc);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.cancionSelecc);
     } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgModel"], _filtros_filtros_component__WEBPACK_IMPORTED_MODULE_3__["FiltrosComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _lista_canciones_lista_canciones_component__WEBPACK_IMPORTED_MODULE_5__["ListaCancionesComponent"], _detalle_filtro_detalle_filtro_component__WEBPACK_IMPORTED_MODULE_6__["DetalleFiltroComponent"], _canciones_canciones_component__WEBPACK_IMPORTED_MODULE_7__["CancionesComponent"], _reproductor_reproductor_component__WEBPACK_IMPORTED_MODULE_8__["ReproductorComponent"]], styles: ["button[_ngcontent-%COMP%], input[_ngcontent-%COMP%]{\n    border-radius: 30px;\n    border-width: 1px;\n    line-height:0.5;\n    font-size:20px;\n    padding-left:40px;\n    background-image:url('search.png');\n    background-size:18px;\n    background-repeat: no-repeat;\n    background-position-x: 5%;\n    background-position-y: 4.5px;\n}\n\nnav[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  background:#6d86bd;\n  padding: 1em;\n}\n.nav-item[_ngcontent-%COMP%] {\n  color:white;\n  padding: 0 1em;\n  text-decoration: none;\n}\n.nav-item[_ngcontent-%COMP%]:hover {\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0NBNEJDO0FBQ0Q7SUFDSSxtQkFBbUI7SUFDbkIsaUJBQWlCO0lBQ2pCLGVBQWU7SUFDZixjQUFjO0lBQ2QsaUJBQWlCO0lBQ2pCLGtDQUFnRDtJQUNoRCxvQkFBb0I7SUFDcEIsNEJBQTRCO0lBQzVCLHlCQUF5QjtJQUN6Qiw0QkFBNEI7QUFDaEM7QUFDQTs7Ozs7Ozs7Q0FRQztBQUVEO0VBQ0UsYUFBYTtFQUNiLDhCQUE4QjtFQUM5QixrQkFBa0I7RUFDbEIsWUFBWTtBQUNkO0FBRUE7RUFDRSxXQUFXO0VBQ1gsY0FBYztFQUNkLHFCQUFxQjtBQUN2QjtBQUVBO0VBQ0UsMEJBQTBCO0FBQzVCIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLypcbmgze1xuICAgIGZvbnQtc2l6ZToyNHB4O1xufVxuXG5oZWFkLCBib2R5e1xuICAgIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcsIHNhbnMtc2VyaWY7XG59XG5cbi50ZXh0LXdoaXRle1xuICAgIGZvbnQtc2l6ZTogeC1sYXJnZTtcbiAgICBjb2xvcjogIzM5ZmYxNCFpbXBvcnRhbnQ7XG59XG5cbi5iZy1pbmZve1xuICAgIG1hcmdpbi1ib3R0b206IDI1cHggO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYig4NCwgNTIsIDIyNikhaW1wb3J0YW50O1xuICAgIHBhZGRpbmctYm90dG9tOiAyNXB4O1xuICAgIHBhZGRpbmctdG9wOiAyNXB4O1xufVxuXG4uY29se1xuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xufVxuXG4uaDMsIGgze1xuICAgIG1hcmdpbi1ib3R0b206IDI1cHg7XG59XG4qL1xuYnV0dG9uLCBpbnB1dHtcbiAgICBib3JkZXItcmFkaXVzOiAzMHB4O1xuICAgIGJvcmRlci13aWR0aDogMXB4O1xuICAgIGxpbmUtaGVpZ2h0OjAuNTtcbiAgICBmb250LXNpemU6MjBweDtcbiAgICBwYWRkaW5nLWxlZnQ6NDBweDtcbiAgICBiYWNrZ3JvdW5kLWltYWdlOnVybCguLi9hc3NldHMvaWNvbnMvc2VhcmNoLnBuZyk7XG4gICAgYmFja2dyb3VuZC1zaXplOjE4cHg7XG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uLXg6IDUlO1xuICAgIGJhY2tncm91bmQtcG9zaXRpb24teTogNC41cHg7XG59XG4vKlxuYnV0dG9uLCA6OnBsYWNlaG9sZGVye1xuICAgIGZvbnQtc2l6ZToyMHB4O1xufVxuXG4udGV4dC1yaWdodHtcbiAgICBtYXJnaW4tcmlnaHQ6IDUwcHhkO1xufVxuKi9cblxubmF2IHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBiYWNrZ3JvdW5kOiM2ZDg2YmQ7XG4gIHBhZGRpbmc6IDFlbTtcbn1cblxuLm5hdi1pdGVtIHtcbiAgY29sb3I6d2hpdGU7XG4gIHBhZGRpbmc6IDAgMWVtO1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbi5uYXYtaXRlbTpob3ZlciB7XG4gIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xufVxuIl19 */"] });
 
 
@@ -776,7 +680,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _play_song_play_song_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./play-song/play-song.component */ "Vdur");
 /* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/slider */ "5RNC");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/platform-browser/animations */ "R1ws");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/fire */ "spgP");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! src/environments/environment */ "AytR");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/fire/firestore */ "I/3d");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+
+
 
 
 
@@ -793,15 +704,17 @@ __webpack_require__.r(__webpack_exports__);
 class AppModule {
 }
 AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdefineInjector"]({ providers: [], imports: [[
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]] });
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ReactiveFormsModule"],
             _angular_material_slider__WEBPACK_IMPORTED_MODULE_10__["MatSliderModule"],
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"]
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"],
+            _angular_fire__WEBPACK_IMPORTED_MODULE_12__["AngularFireModule"].initializeApp(src_environments_environment__WEBPACK_IMPORTED_MODULE_13__["environment"].firebase),
+            _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_14__["AngularFirestoreModule"]
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
         _canciones_canciones_component__WEBPACK_IMPORTED_MODULE_3__["CancionesComponent"],
         _lista_canciones_lista_canciones_component__WEBPACK_IMPORTED_MODULE_4__["ListaCancionesComponent"],
         _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_5__["FilterPipe"],
@@ -812,7 +725,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdefineInjecto
         _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ReactiveFormsModule"],
         _angular_material_slider__WEBPACK_IMPORTED_MODULE_10__["MatSliderModule"],
-        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"]] }); })();
+        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_12__["AngularFireModule"], _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_14__["AngularFirestoreModule"]] }); })();
 
 
 /***/ }),
@@ -926,7 +839,7 @@ CancionesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("src", "assets/cancion/", ctx.cancion.file, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", ctx.cancion.file, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.cancion.title);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);

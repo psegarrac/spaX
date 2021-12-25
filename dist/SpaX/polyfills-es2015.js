@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/pedro/Documentos/Developer/spaX/src/polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! /Users/pedrosegarra/Documents/Developer/spaX/src/polyfills.ts */"hN/g");
 
 
 /***/ }),
