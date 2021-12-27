@@ -2,7 +2,7 @@
   background-color: #f2f2f2;
   padding-bottom: 50px;
   border-style: outset;
-  border-color: #1000f3;
+  border-color: #6D86BD;
 }
 
 .ico {
@@ -43,7 +43,7 @@ div#seekObj1 {
 }
 
 .bg-info{
-  background-color:#0039F3!important;
+  background-color:#6D86BD!important;
 }
 
 .mat-icon {
@@ -151,9 +151,9 @@ div#seekObj1 {
 }
 
 ::ng-deep .mat-accent .mat-slider-thumb {
-  background-color:#0039F3!important
+  background-color:#6D86BD!important
 }
 
 ::ng-deep .mat-slider-track-fill {
-  background-color:#0039F3!important
+  background-color:#6D86BD!important
 }
